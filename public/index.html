@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lucky Draw | MECC1143</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <header><span class="tag">MECC1143 —— CLOUD COMPUTING Group4</span>
+            <h1>Lucky Draw <span>✦</span></h1>
+            <p>Bring everyone into the draw. Let the cloud pick a winner.</p>
+        </header>
+        <div class="layout">
+            <section class="card">
+                <h2>Who's in?</h2>
+                <p>Enter one name per line, up to 100 names.</p><label for="names">Participants</label><textarea
+                    id="names" rows="9" placeholder="Alex&#10;Sam&#10;Taylor"></textarea><label class="check"><input
+                        id="remove" type="checkbox" checked> Remove winner after each draw</label>
+                <div class="actions"><button id="draw">✦ &nbsp;Spin the wheel</button><button id="reset"
+                        class="secondary">Reset</button></div>
+                <p class="note">Names stay on this page and are sent to the server only when you draw. Refreshing clears
+                    them. With many names, wheel labels may be small.</p>
+            </section>
+            <section class="card result-card">
+                <div class="wheel-wrap">
+                    <div class="pointer" aria-hidden="true"></div><canvas id="wheel" width="800" height="800"
+                        aria-label="Participant wheel"></canvas>
+                    <div class="hub" aria-hidden="true">✦</div>
+                </div>
+                <p class="eyebrow">THE LUCKY WINNER</p>
+                <div id="result" class="winner" role="status" aria-live="polite">Ready when you are</div>
+                <p id="message">Add some names and spin the wheel.</p>
+            </section>
+        </div>
+        <footer>Powered by Node.js + Express · Deployed on Render</footer>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
